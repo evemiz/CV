@@ -1,0 +1,10 @@
+.env
+node_modules
+.firebaserc
+firebase.json
+.firebase
+dist/
+.DS_Store
+vite.config.js
+package-lock.json
+package.json
