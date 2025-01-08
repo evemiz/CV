@@ -1,3 +1,23 @@
 .user-form {
     font-family: "Comfortaa", serif;
 }
+
+.form-container {
+    background-color: aliceblue;
+    padding: 20px;
+    height: 60vh;
+    border: 1px solid #d5d3d3;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.skills-list {
+    max-height: 49vh;
+    overflow: scroll;
+}
+
+.skills-list-item {
+    background-color: rgba(189, 200, 205, 0.204);
+    padding: 0;
+    border-radius: 10px;
+}

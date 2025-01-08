@@ -9,7 +9,9 @@ import SectionWithList from "./Template1Components/SectionWithList";
 function Template1({ 
     resumeRef,
     name,
-    links
+    links,
+    skills, 
+    about
 }) {
     return (
         <>
@@ -17,29 +19,30 @@ function Template1({
                 <div className="container-fluid">
                     <div className="col">
 
-                        <div className="row gap-5 grey-bg-color p-3">
+                        <div className="row gap-5 grey-bg-color p-3 mb-3">
                             <Title name={name}/>
                             <Links 
                                 content={Object.values(links)} 
                                 icons={Object.keys(links)}
                             />
                         </div>
-                        
-                        <Skills 
-                            content = {["React", "Node.js", "Python", "ML", "HTML5", "CSS3", "JavaScript", "Java", "C", "C++", "PowerShell"]}
-                        />
-
-                        <div className="row mx-3 mt-3"><hr /></div>
-
-                        {/*About Me*/}
-                        <Section 
-                            title = "About Me"
-                            subTitles = {[""]}
-                            years = {[""]}
-                            paragraphs = {["Fourth-year software engineering honor student, currently working at the IT Support Center of the Ministry of Transport, with military service experience in network management. Possessing a strong work ethic and known as a collaborative team player, I am actively seeking a junior role in software engineering. Enthusiastic about contributing, learning, and thriving in a diverse and challenging environment. Committed to excellence and driven to succeed."]} 
-                        />
-                        
-                        <div className="row mx-3 mt-3"><hr /></div>
+                        {skills.length > 0 && 
+                        <>
+                            <Skills content = {skills} />
+                            <div className="row mx-3 mt-3"><hr /></div>    
+                        </>
+                        }
+                        {(about.content.length > 0 || about.title.length > 0) && 
+                        <>
+                            <Section 
+                                title = {[about.title]}
+                                subTitles = {[""]}
+                                years = {[""]}
+                                paragraphs = {[about.content]}
+                            />
+                            <div className="row mx-3 mt-3"><hr /></div>
+                        </>
+                        }
                         
                         {/*Professional Experience*/}
                         <Section 

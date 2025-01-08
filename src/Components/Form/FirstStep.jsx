@@ -53,7 +53,6 @@ function FirstStep({ name, setName, links, setLinks}) {
                     onChange={(e) => setName(e.target.value)}
                     placeholder="John Doe"
                     className="form-control"
-                    required
                 />
             </div>
 
@@ -88,7 +87,6 @@ function FirstStep({ name, setName, links, setLinks}) {
                                         onChange={(e) => handleInputChange(e, field)}
                                         placeholder={`Enter your ${field}`}
                                         className="form-control"
-                                        required
                                     />
                                 </div>
                                 <div className="col-auto">

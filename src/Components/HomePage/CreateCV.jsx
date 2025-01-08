@@ -8,7 +8,9 @@ function CreateCV() {
     const resumeRef = useRef(null);
     const [name, setName] = useState("");
     const [links, setLinks] = useState({});
-    
+    const [skills, setSkills] = useState([]);
+    const [about, setAbout] = useState({title: "", content: ""});
+
     useEffect(() => {
         const checkOverflow = () => {
             if (resumeRef.current) {
@@ -47,6 +49,10 @@ function CreateCV() {
                             setName={setName}
                             links={links}
                             setLinks={setLinks}
+                            skills={skills}
+                            setSkills={setSkills}
+                            about={about}
+                            setAbout={setAbout}
                         />
                     </div>
                     <div className="col">
@@ -56,6 +62,8 @@ function CreateCV() {
                                     resumeRef={resumeRef}
                                     name={name}
                                     links={links}
+                                    skills={skills}
+                                    about={about}
                                 />
                             </div>
                         </div>
