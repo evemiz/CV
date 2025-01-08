@@ -6,7 +6,11 @@ import Skills from "./Template1Components/Skills";
 import Section from "./Template1Components/Section";
 import SectionWithList from "./Template1Components/SectionWithList";
 
-function Template1({ resumeRef }) {
+function Template1({ 
+    resumeRef,
+    name,
+    links
+}) {
     return (
         <>
             <div className="resume" ref={resumeRef}>
@@ -14,10 +18,10 @@ function Template1({ resumeRef }) {
                     <div className="col">
 
                         <div className="row gap-5 grey-bg-color p-3">
-                            <Title name="Eve Ben Yeshaya"/>
+                            <Title name={name}/>
                             <Links 
-                                content={["054-1110000", "eve@gmail.com", "https://github.com/evemiz", "www.linkedin.com/in/evebenyeshaya"]} 
-                                icons={["Phone", "Email", "GitHub", "Linkedin"]}
+                                content={Object.values(links)} 
+                                icons={Object.keys(links)}
                             />
                         </div>
                         

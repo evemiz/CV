@@ -1,12 +1,12 @@
 .resume {
     width: 210mm; 
-    height: 297mm; 
+    height: 95vh; 
     box-sizing: border-box;
     background: white;
     font-family: "Lato", serif;
     font-size: 14px;
     font-style: normal;
-    overflow: hidden;
+    overflow: auto;
 }
 
 .overflow-warning {
@@ -58,4 +58,17 @@
 .skills-bg {
     background-color: #f4f4f4;
     border-radius: 10px;
+}
+
+.template-container {
+    width: fit-content;
+    margin: 20px 10px;
+    border: 1px solid #d5d3d3;
+    border-radius: 8px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.user-form {
+    margin: 20px 10px;
 }

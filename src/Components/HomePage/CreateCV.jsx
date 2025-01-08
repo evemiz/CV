@@ -1,11 +1,14 @@
 import React, { useState, useEffect, useRef } from "react";
 import Template1 from "../CVTemplates/Template1";
 import html2pdf from "html2pdf.js";
+import CVForm from "../Form/CVForm";
 
 function CreateCV() {
     const [isOverflowing, setIsOverflowing] = useState(false);
     const resumeRef = useRef(null);
-
+    const [name, setName] = useState("");
+    const [links, setLinks] = useState({});
+    
     useEffect(() => {
         const checkOverflow = () => {
             if (resumeRef.current) {
@@ -37,16 +40,34 @@ function CreateCV() {
     return(
         <>
             <div className="container-fluid">
-                <div id="template-content">
-                    <Template1 resumeRef={resumeRef}/>
+                <div className="row">
+                <div className="col user-form">
+                        <CVForm 
+                            name={name}
+                            setName={setName}
+                            links={links}
+                            setLinks={setLinks}
+                        />
+                    </div>
+                    <div className="col">
+                            <div className="template-container">
+                            <div id="template-content">
+                                <Template1 
+                                    resumeRef={resumeRef}
+                                    name={name}
+                                    links={links}
+                                />
+                            </div>
+                        </div>
+                        <button onClick={generatePDF}>ייצא כ-PDF</button>
+                    </div>
                 </div>
-                <button onClick={generatePDF}>ייצא כ-PDF</button>
             </div>
-            {isOverflowing && (
+            {/* {isOverflowing && (
                 <div className="overflow-warning">
                     <p>Warning: The content is overflowing the resume bounds. Please adjust the content.</p>
                 </div>
-            )}
+            )} */}
         </>
         
     );

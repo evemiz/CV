@@ -1,13 +1,15 @@
 import React from "react";
-import { Phone, Email, GitHub, Linkedin } from "../IconsSvg";
+import { Phone, Email, Github, Linkedin, Facebook, Instagram } from "../IconsSvg";
 
 function Links({ content, icons }) {
 
     const iconComponents = {
         Phone,
         Email,
-        GitHub,
+        Github,
         Linkedin,
+        Facebook, 
+        Instagram
     };
 
     function getIcon(iconName) {
