@@ -6,24 +6,21 @@ import Skills from "./Template1Components/Skills";
 import Section from "./Template1Components/Section";
 import SectionWithList from "./Template1Components/SectionWithList";
 
-function Template1() {
+function Template1({ resumeRef }) {
     return (
         <>
-            <div className="resume my-5">
+            <div className="resume" ref={resumeRef}>
                 <div className="container-fluid">
                     <div className="col">
 
                         <div className="row gap-5 grey-bg-color p-3">
-                            {/*Title*/}
                             <Title name="Eve Ben Yeshaya"/>
-                            {/*Links*/}
                             <Links 
                                 content={["054-1110000", "eve@gmail.com", "https://github.com/evemiz", "www.linkedin.com/in/evebenyeshaya"]} 
                                 icons={["Phone", "Email", "GitHub", "Linkedin"]}
                             />
                         </div>
-
-                        {/*Skills*/}
+                        
                         <Skills 
                             content = {["React", "Node.js", "Python", "ML", "HTML5", "CSS3", "JavaScript", "Java", "C", "C++", "PowerShell"]}
                         />
