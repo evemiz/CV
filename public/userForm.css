@@ -10,3 +10,19 @@ body {
 .pink-text-color {
     color: #fff2ec !important;
 }
+
+.nav-style {
+    background-color: #7c80871d;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.logo-nav {
+    font-family: "Raleway Dots", serif;
+    font-weight: 400;
+    font-style: normal;
+    margin-left:10px;
+    font-size: 2rem;
+    color: #333;
+    white-space: nowrap;
+    text-align: left;
+}

@@ -62,7 +62,7 @@ function CVForm({
 
     return (
         <div className="container-fluid">
-            <h1 className="my-5 text-center">{t('create_resume')}</h1>
+            <h1 className="mb-3 text-center">{t('create_resume')}</h1>
             <form onSubmit={handleSubmit} className="form-container">
                 {stepNum == 1 && 
                     <FirstStep 
@@ -160,7 +160,7 @@ function CVForm({
                 }
             </form>
 
-            <div className="my-5" role="group">
+            <div className="my-3" role="group">
                 {stepNum > 1 && 
                     <button type="button" className="btn btn-outline-primary mx-1" onClick={() => setStepNum(stepNum - 1)}>
                         

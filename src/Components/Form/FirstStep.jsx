@@ -51,7 +51,6 @@ function FirstStep({ name, setName, links, setLinks, t}) {
                     name="name"
                     value={name}
                     onChange={(e) => setName(e.target.value)}
-                    placeholder={t('full_name_placeholder')}
                     className="form-control"
                 />
             </div>

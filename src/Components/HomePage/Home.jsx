@@ -1,6 +1,7 @@
 import React, {useEffect} from "react";
 import CreateCV from "./CreateCV";
 import { useTranslation } from 'react-i18next';
+import NavBar from "../NavBar";
 
 function Home() {
     const { t, i18n } = useTranslation();
@@ -22,11 +23,10 @@ function Home() {
 
     return(
         <>
-            <button onClick={() => changeLanguage('en')}>English</button>
-            <button onClick={() => changeLanguage('he')}>עברית</button>
-            <CreateCV 
-                t={t}
-            />
+          <NavBar />
+          {/* <button onClick={() => changeLanguage('en')}>English</button>
+          <button onClick={() => changeLanguage('he')}>עברית</button> */}
+          <CreateCV t={t}/>
         </>
     )
 };
