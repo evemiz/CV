@@ -14,7 +14,7 @@ function CreateCV() {
     const [education, setEducation] = useState({title: "", arr: []});
     const [volunteering, setVolunteering] = useState({title: "", arr: []});
     const [projects, setProjects] = useState({title: "", arr: []});
-    const [languages, setLanguages] = useState({title: "", arr: []});
+    const [languages, setLanguages] = useState([]);
 
     useEffect(() => {
         const checkOverflow = () => {

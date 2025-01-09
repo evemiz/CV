@@ -97,24 +97,13 @@ function Template1({
                         </>
                         }
 
-                        {(languages.title || languages.arr.length > 0) && 
-                        <>
-                            <Section 
-                                title={projects.title}
-                                subTitles={projects.arr.map((i) => i.title)} 
-                                years={projects.arr.map((i) => i.year)}
-                                paragraphs={projects.arr.map((i) => i.content)}
-                            />
-                            <div className="row mx-3 mt-3"><hr /></div>
-                        </>
-                        }
-
-
                         {/*Languages*/}
-                        {/* <SectionWithList 
-                            title="Languages:"
-                            items={["Hebrew- native", "English – fluent"]}
-                        /> */}
+                        {languages.length > 0 && 
+                            <SectionWithList 
+                                title="Languages"
+                                items={languages.map(lang => lang.level ? `${lang.lang} - ${lang.level}` : lang.lang)}
+                            />
+                        }
                     </div>
                 </div>
             </div>

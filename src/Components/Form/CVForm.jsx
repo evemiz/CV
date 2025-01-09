@@ -4,6 +4,7 @@ import FirstStep from "./FirstStep";
 import SecondStep from "./SecondStep";
 import ThirdStep from "./ThirdStep";
 import NextSteps from "./NextSteps";
+import LanguagesStep from "./LanguagesStep";
 import { experienceText, educationText, volunteeringText, projectsText, languagesText } from "./NextStepsText";
 
 function CVForm({
@@ -92,10 +93,9 @@ function CVForm({
                 }
 
                 {stepNum === 8 && 
-                    <NextSteps 
-                        items={languages}
-                        setItems={setLanguages}
-                        secName={languagesText}
+                    <LanguagesStep 
+                        languages={languages}
+                        setLanguages={setLanguages}
                     />
                 }
             </form>
