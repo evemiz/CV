@@ -26,8 +26,8 @@ function Home() {
         <>
           <NavBar changeLanguage={changeLanguage}/>
           
-          {/* <CreateCV t={t}/> */}
-          <GetStarted t={t}/>
+          <CreateCV t={t}/>
+          {/* <GetStarted t={t}/> */}
         </>
     )
 };

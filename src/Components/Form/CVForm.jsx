@@ -29,9 +29,10 @@ function CVForm({
     languages,
     setLanguages,
     generatePDF,
+    stepNum,
+    setStepNum,
     t
 }) {
-    const [stepNum, setStepNum] = useState(1);
     const [isEng, setIsEng] = useState(document.documentElement.lang === 'en');
 
     const {

@@ -17,6 +17,7 @@ function CreateCV({ t }) {
     const [projects, setProjects] = useState({title: "", arr: []});
     const [hobbies, setHobbies] = useState([]);
     const [languages, setLanguages] = useState([]);
+    const [stepNum, setStepNum] = useState(1);
 
     useEffect(() => {
         const checkOverflow = () => {
@@ -72,6 +73,8 @@ function CreateCV({ t }) {
                             languages={languages}
                             setLanguages={setLanguages}
                             generatePDF={generatePDF}
+                            stepNum={stepNum}
+                            setStepNum={setStepNum}
                             t={t}
                         />
                     </div>
@@ -90,6 +93,7 @@ function CreateCV({ t }) {
                                     projects={projects}
                                     hobbies={hobbies}
                                     languages={languages}
+                                    stepNum={stepNum}
                                     t={t}
                                 />
                             </div>

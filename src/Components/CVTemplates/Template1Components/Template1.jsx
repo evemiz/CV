@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import '../../../../public/templates.css'
 import Title from "./Title";
 import Links from "./Links"
@@ -19,8 +19,31 @@ function Template1({
     projects,
     hobbies,
     languages,
+    stepNum,
     t
 }) {
+
+    const [parent, setParent] = useState(null);
+
+    useEffect(() => {
+        removeLastHr();
+    }, [stepNum]);
+
+    function removeLastHr() {
+        if (stepNum === 10) {
+            const hrArr = document.getElementsByTagName('hr');
+            if (hrArr.length > 0) {
+                const lastHr = hrArr[hrArr.length - 1];
+                const parentDiv = lastHr.closest('div');
+                setParent(parentDiv);
+                lastHr.remove();
+            }
+        } else if (parent !== null) {
+            parent.innerHTML = '<hr />'
+            setParent(null);
+        }
+    }
+
     return (
         <>
             <div className="resume" ref={resumeRef}>
