@@ -3,6 +3,8 @@ import '../../../public/CVForm.css';
 import FirstStep from "./FirstStep";
 import SecondStep from "./SecondStep";
 import ThirdStep from "./ThirdStep";
+import NextSteps from "./NextSteps";
+import { experienceText, educationText, volunteeringText, projectsText, languagesText } from "./NextStepsText";
 
 function CVForm({
     name,
@@ -12,7 +14,17 @@ function CVForm({
     skills, 
     setSkills,
     about,
-    setAbout
+    setAbout, 
+    experience,
+    setExperience,
+    education, 
+    setEducation,
+    volunteering,
+    setVolunteering,
+    projects,
+    setProjects,
+    languages,
+    setLanguages
 }) {
     const [stepNum, setStepNum] = useState(1);
 
@@ -43,6 +55,47 @@ function CVForm({
                     <ThirdStep
                         about={about}
                         setAbout={setAbout}
+                    />
+                }
+                
+                {stepNum == 4 && 
+                    <NextSteps 
+                        items={experience}
+                        setItems={setExperience}
+                        secName={experienceText}
+                        sectio
+                    />
+                }
+
+                {stepNum === 5 && 
+                    <NextSteps 
+                        items={education}
+                        setItems={setEducation}
+                        secName={educationText}
+                    />
+                }
+
+                {stepNum === 6 && 
+                    <NextSteps 
+                        items={volunteering}
+                        setItems={setVolunteering}
+                        secName={volunteeringText}
+                    />
+                }
+
+                {stepNum === 7 && 
+                    <NextSteps 
+                        items={projects}
+                        setItems={setProjects}
+                        secName={projectsText}
+                    />
+                }
+
+                {stepNum === 8 && 
+                    <NextSteps 
+                        items={languages}
+                        setItems={setLanguages}
+                        secName={languagesText}
                     />
                 }
             </form>

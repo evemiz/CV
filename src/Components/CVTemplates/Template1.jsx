@@ -11,7 +11,12 @@ function Template1({
     name,
     links,
     skills, 
-    about
+    about,
+    experience,
+    education, 
+    volunteering,
+    projects,
+    languages,
 }) {
     return (
         <>
@@ -43,46 +48,73 @@ function Template1({
                             <div className="row mx-3 mt-3"><hr /></div>
                         </>
                         }
-                        
-                        {/*Professional Experience*/}
-                        <Section 
-                            title = "Professional Experience"
-                            subTitles = {["IT Support Center (Student Position)"]}
-                            years = {["Present"]}
-                            paragraphs = {["Working at the IT Support Center within the Ministry of Transport, my role covers all essential IT functions, including user support, system maintenance, and troubleshooting. Additionally, I am involved in a project to develop an IT platform that integrates various support operations. The platform's backend is powered by PowerShell scripts to handle tasks such as retrieving user and computer details, remote management, and system shutdowns without direct connection. The frontend is built using React to create a user-friendly interface for managing support tasks."]} 
-                        />
 
-                        <div className="row mx-3 mt-3"><hr /></div>
+                        {(experience.title || experience.arr.length > 0) && 
+                        <>
+                            <Section 
+                                title={experience.title}
+                                subTitles={experience.arr.map((i) => i.title)} 
+                                years={experience.arr.map((i) => i.year)}
+                                paragraphs={experience.arr.map((i) => i.content)}
+                            />
+                            <div className="row mx-3 mt-3"><hr /></div>
+                        </>
+                        }
 
-                        {/*Education*/}
-                        <Section 
-                            title = "Education"
-                            subTitles = {["B.Sc. in Software Engineering (expected: 2025)", "Key Courses:"]}
-                            years = {["2021 - Present", ""]}
-                            paragraphs = {["Azrieli College of Engineering, Jerusalem, Israel.\nGPA: 92.27\nRecipient of the First-Year Academic Excellence Award.", "Operating Systems (Grade: 90) | C and C++ Programming (Grade: 94) | Introduction to Machine Learning (Grade: 95) | Algorithmic (Grade: 98) | Computer Networking (Grade: 95)."]} 
-                        />
+                        {(education.title || education.arr.length > 0) && 
+                        <>
+                            <Section 
+                                title={education.title}
+                                subTitles={education.arr.map((i) => i.title)} 
+                                years={education.arr.map((i) => i.year)}
+                                paragraphs={education.arr.map((i) => i.content)}
+                            />
+                            <div className="row mx-3 mt-3"><hr /></div>
+                        </>
+                        }
 
-                        <div className="row mx-3 mt-3"><hr /></div>
+                        {(volunteering.title || volunteering.arr.length > 0) && 
+                        <>
+                            <Section 
+                                title={volunteering.title}
+                                subTitles={volunteering.arr.map((i) => i.title)} 
+                                years={volunteering.arr.map((i) => i.year)}
+                                paragraphs={volunteering.arr.map((i) => i.content)}
+                            />
+                            <div className="row mx-3 mt-3"><hr /></div>
+                        </>
+                        }
 
-                        {/*Volunteering*/}
-                        <Section 
-                            title = "Volunteering"
-                            subTitles = {["Perach - A National Program for Social ImpactPerach - A National Program for Social Impact"]}
-                            years = {["2021 - Present"]}
-                            paragraphs = {["Perach - A National Program for Social ImpactPerach - A National Program for Social Impact"]} 
-                        />
-                        <SectionWithList 
-                            subTitle="Responsibilities:"
-                            items={["Offered guidance and assistance to help students navigate academic challenges and adjust to university life.", "Demonstrated a commitment to the academic success and well-being of first-year students."]}
-                        />
+                        {(projects.title || projects.arr.length > 0) && 
+                        <>
+                            <Section 
+                                title={projects.title}
+                                subTitles={projects.arr.map((i) => i.title)} 
+                                years={projects.arr.map((i) => i.year)}
+                                paragraphs={projects.arr.map((i) => i.content)}
+                            />
+                            <div className="row mx-3 mt-3"><hr /></div>
+                        </>
+                        }
 
-                        <div className="row mx-3 mt-1"><hr /></div>
+                        {(languages.title || languages.arr.length > 0) && 
+                        <>
+                            <Section 
+                                title={projects.title}
+                                subTitles={projects.arr.map((i) => i.title)} 
+                                years={projects.arr.map((i) => i.year)}
+                                paragraphs={projects.arr.map((i) => i.content)}
+                            />
+                            <div className="row mx-3 mt-3"><hr /></div>
+                        </>
+                        }
+
 
                         {/*Languages*/}
-                        <SectionWithList 
+                        {/* <SectionWithList 
                             title="Languages:"
                             items={["Hebrew- native", "English – fluent"]}
-                        />
+                        /> */}
                     </div>
                 </div>
             </div>

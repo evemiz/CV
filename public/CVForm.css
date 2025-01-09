@@ -16,6 +16,11 @@
     overflow: scroll;
 }
 
+.scrolling {
+    max-height: 57vh;
+    overflow: scroll;
+}
+
 .skills-list-item {
     background-color: rgba(189, 200, 205, 0.204);
     padding: 0;

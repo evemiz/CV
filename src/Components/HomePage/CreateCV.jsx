@@ -10,6 +10,11 @@ function CreateCV() {
     const [links, setLinks] = useState({});
     const [skills, setSkills] = useState([]);
     const [about, setAbout] = useState({title: "", content: ""});
+    const [experience, setExperience] = useState({title: "", arr: []});
+    const [education, setEducation] = useState({title: "", arr: []});
+    const [volunteering, setVolunteering] = useState({title: "", arr: []});
+    const [projects, setProjects] = useState({title: "", arr: []});
+    const [languages, setLanguages] = useState({title: "", arr: []});
 
     useEffect(() => {
         const checkOverflow = () => {
@@ -53,6 +58,16 @@ function CreateCV() {
                             setSkills={setSkills}
                             about={about}
                             setAbout={setAbout}
+                            experience={experience}
+                            setExperience={setExperience}
+                            education={education}
+                            setEducation={setEducation}
+                            volunteering={volunteering}
+                            setVolunteering={setVolunteering}
+                            projects={projects}
+                            setProjects={setProjects}
+                            languages={languages}
+                            setLanguages={setLanguages}
                         />
                     </div>
                     <div className="col">
@@ -64,6 +79,11 @@ function CreateCV() {
                                     links={links}
                                     skills={skills}
                                     about={about}
+                                    experience={experience}
+                                    education={education}
+                                    volunteering={volunteering}
+                                    projects={projects}
+                                    languages={languages}
                                 />
                             </div>
                         </div>

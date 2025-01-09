@@ -51,7 +51,7 @@ function SecondStep({ skills, setSkills}) {
                                 <label className="col-form-label">
                                     {skill}
                                 </label>
-                            </div>
+                        </div>
                             <div className="col-auto my-2">
                                 <span className="form-text">
                                     <IconButton onClick={() => handleRemoveField(skill)}>
