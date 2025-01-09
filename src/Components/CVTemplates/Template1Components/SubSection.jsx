@@ -1,6 +1,8 @@
 import React from "react";
 
 function SubSection({ title, year, paragraph }) {
+    const paragraphs = paragraph.split('\n');
+
     return(
         <>
             <div className="row ms-4">
@@ -12,7 +14,9 @@ function SubSection({ title, year, paragraph }) {
                 </div>  
             </div>
             <div className="row mx-4 p-0">
-                <p className="p-0 m-0">{paragraph}</p>
+                {paragraphs.map((para, index) => (
+                    <p className="p-0 m-0" key={index}>{para}</p>
+                ))}
             </div>
         </>
     );

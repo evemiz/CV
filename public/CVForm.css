@@ -5,7 +5,7 @@
 .form-container {
     background-color: aliceblue;
     padding: 20px;
-    height: 60vh;
+    height: 70vh;
     border: 1px solid #d5d3d3;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -17,7 +17,7 @@
 }
 
 .scrolling {
-    max-height: 57vh;
+    max-height: 66vh;
     overflow: scroll;
 }
 
