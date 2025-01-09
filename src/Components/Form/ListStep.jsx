@@ -61,11 +61,11 @@ function ListStep({items, setItems, text, t}) {
                                 className="form-select" 
                             >
                                 <option value="">{t('languageProficiency.placeholder')}</option>
-                                <option value="Native">{t('languageProficiency.native')}</option>
-                                <option value="Fluent">{t('languageProficiency.fluent')}</option>
-                                <option value="Professional">{t('languageProficiency.professional')}</option>
-                                <option value="Intermediate">{t('languageProficiency.intermediate')}</option>
-                                <option value="Basic">{t('languageProficiency.basic')}</option>
+                                <option value={t('languageProficiency.native')}>{t('languageProficiency.native')}</option>
+                                <option value={t('languageProficiency.fluent')}>{t('languageProficiency.fluent')}</option>
+                                <option value={t('languageProficiency.professional')}>{t('languageProficiency.professional')}</option>
+                                <option value={t('languageProficiency.intermediate')}>{t('languageProficiency.intermediate')}</option>
+                                <option value={t('languageProficiency.basic')}>{t('languageProficiency.basic')}</option>
                             </select>
                         </div>
                     )}

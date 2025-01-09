@@ -3,7 +3,7 @@ import React from "react";
 function SectionWithList({ title, subTitle, year, items }) {
     return(
         <>
-            <div className="row ms-4">
+            <div className={`row ${document.documentElement.lang === 'he' ? 'me-4' : 'ms-4'}`}>
                 <div className="sub-title-size p-0">{title}</div>
             </div>
             <div className="row ms-4">
@@ -14,7 +14,7 @@ function SectionWithList({ title, subTitle, year, items }) {
                     <div className="second-sub-title-size px-2 my-1 me-4 skills-bg">{year}</div>
                 </div>  
             </div> 
-            <div className="row me-4 ms-5 p-0">
+            <div className={`row p-0 ${document.documentElement.lang === 'he' ? 'me-4' : 'ms-4'}`}>
                 <ul>
                     {items.map((item, index) => (
                         <li key={index}>{item}</li>

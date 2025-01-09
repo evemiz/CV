@@ -22,7 +22,7 @@ function Links({ content, icons }) {
             {icons.map((icon, index) => (
                 <div className="row p-0 mt-1" key={index}>
                     <div className="d-flex align-items-center">
-                        <div className="circle me-2 p-0">
+                        <div className="circle mx-2 p-0">
                             {getIcon(icon)}
                         </div> 
                         <span className="" style={{ whiteSpace: 'nowrap' }}>{content[index]}</span>

@@ -66,5 +66,6 @@
         "professional": "Professional",
         "intermediate": "Intermediate",
         "basic": "Basic"
-    }
+    },
+    "skills_title": "Skills"
 }

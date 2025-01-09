@@ -107,7 +107,7 @@ function NextSteps({items, setItems, secName, t}) {
 
                         {!open && (
                             <button onClick={() => setOpen(true)} className="btn btn-outline-secondary mt-1">
-                            t('add')
+                            {t('add')}
                         </button>
                         )}
                     </>

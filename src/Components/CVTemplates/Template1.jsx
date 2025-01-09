@@ -19,6 +19,7 @@ function Template1({
     projects,
     hobbies,
     languages,
+    t
 }) {
     return (
         <>
@@ -35,7 +36,7 @@ function Template1({
                         </div>
                         {skills.length > 0 && 
                         <>
-                            <Skills content = {skills} />
+                            <Skills content = {skills} t={t}/>
                             <div className="row mx-3 mt-3"><hr /></div>    
                         </>
                         }
@@ -102,7 +103,7 @@ function Template1({
                         {/*Hobbies*/}
                         {hobbies.length > 0 &&
                         <>
-                            <Hobbies content={hobbies.map(hobby => hobby.item)} />
+                            <Hobbies content={hobbies.map(hobby => hobby.item)} t={t}/>
                             <div className="row mx-3 mt-3"><hr /></div>
                         </>
                         }
@@ -111,8 +112,9 @@ function Template1({
                         {languages.length > 0 &&
                         <>
                             <SectionWithList 
-                                title="Languages"
+                                title={t('languagesText_title')}
                                 items={languages.map(i => i.level ? `${i.item} - ${i.level}` : i.item)}
+                                t={t}
                             />
                             <div className="row mx-3 mt-3"><hr /></div>
                         </>
