@@ -1,10 +1,12 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import lottie from "lottie-web";
+import "../../public/userForm.css"
 import animationData from '../../public/wired-outline-245-edit-document-hover-pinch.json';
 
-function NavBar() {
+function NavBar({ changeLanguage }) {
     const animationContainer = useRef(null);
     const animationInstance = useRef(null);
+    const [currentLanguage, setCurrentLanguage] = useState(document.documentElement.lang || "en");
 
     useEffect(() => {
         animationInstance.current = lottie.loadAnimation({
@@ -20,12 +22,22 @@ function NavBar() {
         };
     }, []);
 
+    useEffect(() => {
+        document.documentElement.lang = currentLanguage;
+    }, [currentLanguage]);
+
     const handleMouseEnter = () => {
         animationInstance.current.play(); // Play animation on hover
     };
 
     const handleMouseLeave = () => {
         animationInstance.current.stop(); // Stop animation when hover ends
+    };
+
+    const toggleLanguage = () => {
+        const newLanguage = currentLanguage === "he" ? "en" : "he";
+        setCurrentLanguage(newLanguage);
+        changeLanguage(newLanguage); // Call the parent function if needed
     };
 
     return (
@@ -50,6 +62,13 @@ function NavBar() {
                     {/* Text Next to Animation */}
                     <span className="logo-nav">NextStepCV</span>
                 </a>
+                <button
+                    onClick={toggleLanguage}
+                    className="btn btn-outline-secondary mt-2"
+                    style={{position: 'absolute', right: '10px'}}
+                >
+                    {currentLanguage === "he" ? "עבור לאתר באנגלית" : "Switch to Hebrew site"}
+                </button>
             </header>
         </div>
     );

@@ -1,11 +1,11 @@
 import React from "react";
-import '../../../public/templates.css'
-import Title from "./Template1Components/Title";
-import Links from "./Template1Components/Links"
-import Skills from "./Template1Components/Skills";
-import Section from "./Template1Components/Section";
-import SectionWithList from "./Template1Components/SectionWithList";
-import Hobbies from "./Template1Components/Hobbies";
+import '../../../../public/templates.css'
+import Title from "./Title";
+import Links from "./Links"
+import Skills from "./Skills";
+import Section from "./Section";
+import SectionWithList from "./SectionWithList";
+import Hobbies from "./Hobbies";
 
 function Template1({ 
     resumeRef,

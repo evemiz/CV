@@ -66,5 +66,24 @@
         "intermediate": "Intermediate",
         "basic": "Basic"
     },
-    "skills_title": "Skills"
+    "skills_title": "Skills",
+    "get_started": "Let's Get Started",
+    "platform_description": "is a user-friendly platform designed to help you create professional, high-quality resumes effortlessly. With just a few clicks, you can generate a stunning resume that highlights your skills, experience, and education in the best possible way. Whether you’re entering the job market for the first time or looking to update your current resume, NextStepCV provides customizable templates that make the process quick and easy.",
+    "tips_title": "Tips for writing your resume:",
+    "tip_keep_concise": "Keep it concise",
+    "tip_keep_concise_desc": "Aim for a one-page resume unless you have extensive experience.",
+    "tip_highlight_achievements": "Highlight achievements",
+    "tip_highlight_achievements_desc": "Focus on your accomplishments rather than just listing job responsibilities.",
+    "tip_tailor_job": "Tailor to the job",
+    "tip_tailor_job_desc": "Customize your resume with relevant skills and keywords.",
+    "tip_use_action_verbs": "Use action verbs",
+    "tip_use_action_verbs_desc": "Start bullet points with dynamic action verbs like 'managed,' 'led,' or 'designed.'",
+    "tip_proofread": "Proofread",
+    "tip_proofread_desc": "Ensure your resume is free of spelling or grammatical errors to make a strong professional impression.",
+    "tip_clean": "Keep it visually clean",
+    "tip_clean_desc": "Use a simple, professional layout with consistent formatting.",
+    "tip_skills": "Show relevant skills",
+    "tip_skills_desc": "Include a dedicated \"Skills\" section that lists technical and soft skills related to the job.",
+    "tip_summary": "Add a professional summary",
+    "tip_summary_desc": "Start with a brief summary at the top that highlights your key strengths and career goals."
 }

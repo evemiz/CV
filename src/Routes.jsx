@@ -1,6 +1,5 @@
 import React, {useEffect} from "react";
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Login from "./Components/Login";
 import i18n from './i18n';
 import Home from "./Components/HomePage/Home";
 

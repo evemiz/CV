@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
-import Template1 from "../CVTemplates/Template1";
+import Template1 from "../CVTemplates/Template1Components/Template1";
 import html2pdf from "html2pdf.js";
 import CVForm from "../Form/CVForm";
 
