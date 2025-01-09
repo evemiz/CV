@@ -3,7 +3,7 @@ import IconButton from '@mui/material/IconButton';
 import DeleteIcon from '@mui/icons-material/Delete';
 import CreateIcon from '@mui/icons-material/Create';
 
-function NextSteps({items, setItems, secName}) {
+function NextSteps({items, setItems, secName, t}) {
     const [newItem, setNewItem] = useState({title: "", year: "", content: ""});
     const [open, setOpen] = useState(true);
     const [editIndex, setEditIndex] = useState(null);
@@ -65,7 +65,7 @@ function NextSteps({items, setItems, secName}) {
                     <p>{secName.description}</p>
                 </label>
 
-                <label htmlFor="title">Section Title</label>
+                <label htmlFor="title">{t('section_title')}</label>
                 <input
                     type="text"
                     name="title"
@@ -107,7 +107,7 @@ function NextSteps({items, setItems, secName}) {
 
                         {!open && (
                             <button onClick={() => setOpen(true)} className="btn btn-outline-secondary mt-1">
-                            Add
+                            t('add')
                         </button>
                         )}
                     </>
@@ -125,17 +125,17 @@ function NextSteps({items, setItems, secName}) {
                             className="form-control mb-3"
                         />
 
-                        <label htmlFor="time">Time Period</label>
+                        <label htmlFor="time">{t('time_period_title')}</label>
                         <input
                             type="text"
                             name="time"
                             value={newItem.year}
                             onChange={(e) => setNewItem({ ...newItem, year: e.target.value })}
-                            placeholder="e.g., 2020-2022"
+                            placeholder={t('time_example')}
                             className="form-control mb-3"
                         />
 
-                        <label htmlFor="content">Content</label>
+                        <label htmlFor="content">{t('content_title')}</label>
                         <textarea
                             name="content"
                             value={newItem.content}
@@ -153,11 +153,11 @@ function NextSteps({items, setItems, secName}) {
 
                         <div className="mt-2">
                             <button onClick={addItem} className="btn btn-outline-secondary">
-                                {editIndex !== null ? "Update" : "Add"}
+                                {editIndex !== null ? t('update') : t('add')}
                             </button>
                             {items.arr.length > 0 && 
-                                <button onClick={handleReturn} className="btn btn-outline-danger ms-3">
-                                    Return
+                                <button onClick={handleReturn} className="btn btn-outline-danger mx-3">
+                                    {t('return')}
                                 </button>
                             }
                         </div>

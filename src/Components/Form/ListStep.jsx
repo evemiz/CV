@@ -3,7 +3,7 @@ import IconButton from '@mui/material/IconButton';
 import AddIcon from '@mui/icons-material/Add';
 import DeleteIcon from '@mui/icons-material/Delete';
 
-function ListStep({items, setItems, text}) {
+function ListStep({items, setItems, text, t}) {
     const [newItem, setNewItem] = useState({item: "", level: ""});
 
     function addItem() {
@@ -60,12 +60,12 @@ function ListStep({items, setItems, text}) {
                                 }
                                 className="form-select" 
                             >
-                                <option value="">Select Proficiency Level</option>
-                                <option value="Native">Native</option>
-                                <option value="Fluent">Fluent</option>
-                                <option value="Professional">Professional</option>
-                                <option value="Intermediate">Intermediate</option>
-                                <option value="Basic">Basic</option>
+                                <option value="">{t('languageProficiency.placeholder')}</option>
+                                <option value="Native">{t('languageProficiency.native')}</option>
+                                <option value="Fluent">{t('languageProficiency.fluent')}</option>
+                                <option value="Professional">{t('languageProficiency.professional')}</option>
+                                <option value="Intermediate">{t('languageProficiency.intermediate')}</option>
+                                <option value="Basic">{t('languageProficiency.basic')}</option>
                             </select>
                         </div>
                     )}

@@ -2,7 +2,7 @@ import React, {useState} from "react";
 import IconButton from '@mui/material/IconButton';
 import DeleteIcon from '@mui/icons-material/Delete';
 
-function FirstStep({ name, setName, links, setLinks}) {
+function FirstStep({ name, setName, links, setLinks, t}) {
     const [fields, setFields] = useState(Object.keys(links));
     const [selectValue, setSelectValue] = useState("");
     
@@ -44,14 +44,14 @@ function FirstStep({ name, setName, links, setLinks}) {
     return(
         <>
             <div className="form-group">
-                <label className="form-label" htmlFor="name">What's Your Full Name?</label>
+                <label className="form-label" htmlFor="name">{t('whats_your_full_name')}</label>
                 <input
                     type="text"
                     id="name"
                     name="name"
                     value={name}
                     onChange={(e) => setName(e.target.value)}
-                    placeholder="John Doe"
+                    placeholder={t('full_name_placeholder')}
                     className="form-control"
                 />
             </div>
@@ -62,10 +62,10 @@ function FirstStep({ name, setName, links, setLinks}) {
                     value={selectValue}
                     onChange={handleSelectChange}
                 >
-                    <option defaultValue>Choose Field to Add</option>
+                    <option defaultValue>{t('choose_field')}</option>
                     {filteredFields.map((field) => (
                         <option key={field} value={field}>
-                            {field.charAt(0).toUpperCase() + field.slice(1)}
+                            {t(field.toLowerCase())}
                         </option>
                     ))}
                 </select>
@@ -77,7 +77,7 @@ function FirstStep({ name, setName, links, setLinks}) {
                             <div className="row g-3 align-items-center mt-1">
                                 <div className="col-2">
                                     <label className="col-form-label">
-                                        {field.charAt(0).toUpperCase() + field.slice(1)}
+                                        {t(field.toLowerCase())}
                                     </label>
                                 </div>
                                 <div className="col-5">
@@ -85,7 +85,7 @@ function FirstStep({ name, setName, links, setLinks}) {
                                         type="text"
                                         value={links[field] || ""}
                                         onChange={(e) => handleInputChange(e, field)}
-                                        placeholder={`Enter your ${field}`}
+                                        placeholder={t('enter_your', { field: t(field.toLowerCase()) })}
                                         className="form-control"
                                     />
                                 </div>

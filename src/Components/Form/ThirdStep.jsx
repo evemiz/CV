@@ -1,6 +1,6 @@
 import React from "react";
 
-function ThirdStep({ about, setAbout}) {
+function ThirdStep({ about, setAbout, t }) {
 
     const handleContentChange = (e) => {
         const { value } = e.target;
@@ -22,27 +22,27 @@ function ThirdStep({ about, setAbout}) {
         <>
             <div className="form-group">
                 <label className="form-label">
-                    <h5>Tell us a little about yourself !</h5>
-                    <p>Share your strengths, passions, or anything you'd like others to know about you. This section is your chance to shine and make a great impression.</p>
+                    <h5>{t('aboutSectionTitle')}</h5>
+                    <p>{t('aboutSectionDescription')}</p>
                 </label>
 
-                <label htmlFor="title">Section Title</label>
+                <label htmlFor="title">{t('section_title')}</label>
                 <input
                     type="text"
                     name="title"
                     value={about.title}
                     onChange={handleTitleChange}
-                    placeholder="e.g., About Me"
+                    placeholder={t('sectionTitlePlaceholder')}
                     className="form-control mb-3"
                 />
 
-                <label htmlFor="content">Content</label>
+                <label htmlFor="content">{t('content_title')}</label>
                 <textarea
                     type="text"
                     name="content"
                     value={about.content}
                     onChange={handleContentChange}
-                    placeholder="e.g., I am a dedicated software engineer with a passion for solving complex problems and learning new technologies..."
+                    placeholder={t('contentPlaceholder')}
                     className="form-control"
                     rows="8"
                 />

@@ -3,7 +3,7 @@ import Template1 from "../CVTemplates/Template1";
 import html2pdf from "html2pdf.js";
 import CVForm from "../Form/CVForm";
 
-function CreateCV() {
+function CreateCV({ t }) {
     const [isOverflowing, setIsOverflowing] = useState(false);
     const [close, setClose] = useState(false);
     const resumeRef = useRef(null);
@@ -35,14 +35,13 @@ function CreateCV() {
         const element = document.getElementById("template-content");
 
         const opt = {
-            margin:       0,    // הגדרת שוליים שווים
-            filename:     'cv.pdf', // שם הקובץ
+            margin:       0,  
+            filename:     'cv.pdf',
             image:        { type: 'jpeg', quality: 0.98 },
-            html2canvas:  { scale: 2 },  // הגדלת איכות התמונה
+            html2canvas:  { scale: 2 }, 
             jsPDF:        { unit: 'mm', format: 'a4', orientation: 'portrait' }
         };
 
-        // ייבוא HTML ל-PDF
         html2pdf().from(element).set(opt).save();
     };
 
@@ -73,6 +72,7 @@ function CreateCV() {
                             languages={languages}
                             setLanguages={setLanguages}
                             generatePDF={generatePDF}
+                            t={t}
                         />
                     </div>
                     <div className="col">
@@ -90,6 +90,7 @@ function CreateCV() {
                                     projects={projects}
                                     hobbies={hobbies}
                                     languages={languages}
+                                    t={t}
                                 />
                             </div>
                         </div>
@@ -100,8 +101,8 @@ function CreateCV() {
                 <div className="overflow-warning">
                     <button className="btn-close" onClick={() => setClose(true)}></button>
                     <div className="text-center px-5">
-                        <p>Attention: The text you've entered exceeds the page boundaries.</p>
-                        <p>Your resume may extend across more than one page.</p>
+                        <p>{t('attention_text')}</p>
+                        <p>{t('resume_warning')}</p>
                     </div>
                 </div>
                 

@@ -3,7 +3,7 @@ import IconButton from '@mui/material/IconButton';
 import AddIcon from '@mui/icons-material/Add';
 import DeleteIcon from '@mui/icons-material/Delete';
 
-function SecondStep({ skills, setSkills}) {
+function SecondStep({ skills, setSkills, t}) {
     const [newSkill, setNewSkill] = useState("");
 
     function addSkill() {
@@ -20,14 +20,14 @@ function SecondStep({ skills, setSkills}) {
     return(
         <>
             <div className="form-group">
-                <label className="form-label" htmlFor="name">What Are Your Top Skills?</label>
+                <label className="form-label" htmlFor="name">{t('topSkillsLabel')}</label>
                 <div className="row">
                     <div className="col">
                         <input
                             type="text"
                             value={newSkill}
                             onChange={(e) => setNewSkill(e.target.value)}
-                            placeholder="e.g., React, Python, Communication, Problem-solving"
+                            placeholder={t('skillsPlaceholder')}
                             className="form-control"
                             onKeyDown={(e) => {
                                 if (e.key === "Enter") {
