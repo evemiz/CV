@@ -5,6 +5,7 @@ import Links from "./Template1Components/Links"
 import Skills from "./Template1Components/Skills";
 import Section from "./Template1Components/Section";
 import SectionWithList from "./Template1Components/SectionWithList";
+import Hobbies from "./Template1Components/Hobbies";
 
 function Template1({ 
     resumeRef,
@@ -16,6 +17,7 @@ function Template1({
     education, 
     volunteering,
     projects,
+    hobbies,
     languages,
 }) {
     return (
@@ -97,12 +99,24 @@ function Template1({
                         </>
                         }
 
+                        {/*Hobbies*/}
+                        {hobbies.length > 0 &&
+                        <>
+                            <Hobbies content={hobbies.map(hobby => hobby.item)} />
+                            <div className="row mx-3 mt-3"><hr /></div>
+                        </>
+                        }
+
                         {/*Languages*/}
-                        {languages.length > 0 && 
+                        {languages.length > 0 &&
+                        <>
                             <SectionWithList 
                                 title="Languages"
-                                items={languages.map(lang => lang.level ? `${lang.lang} - ${lang.level}` : lang.lang)}
+                                items={languages.map(i => i.level ? `${i.item} - ${i.level}` : i.item)}
                             />
+                            <div className="row mx-3 mt-3"><hr /></div>
+                        </>
+                            
                         }
                     </div>
                 </div>

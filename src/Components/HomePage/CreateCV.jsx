@@ -5,6 +5,7 @@ import CVForm from "../Form/CVForm";
 
 function CreateCV() {
     const [isOverflowing, setIsOverflowing] = useState(false);
+    const [close, setClose] = useState(false);
     const resumeRef = useRef(null);
     const [name, setName] = useState("");
     const [links, setLinks] = useState({});
@@ -14,6 +15,7 @@ function CreateCV() {
     const [education, setEducation] = useState({title: "", arr: []});
     const [volunteering, setVolunteering] = useState({title: "", arr: []});
     const [projects, setProjects] = useState({title: "", arr: []});
+    const [hobbies, setHobbies] = useState([]);
     const [languages, setLanguages] = useState([]);
 
     useEffect(() => {
@@ -22,12 +24,12 @@ function CreateCV() {
                 setIsOverflowing(resumeRef.current.scrollHeight > resumeRef.current.clientHeight);
             }
         };
-
+    
         checkOverflow();
         window.addEventListener("resize", checkOverflow);
-
+    
         return () => window.removeEventListener("resize", checkOverflow);
-    }, []);
+    }, [name, links, skills, about, experience, education, volunteering, projects, languages]);
 
     const generatePDF = () => {
         const element = document.getElementById("template-content");
@@ -66,8 +68,11 @@ function CreateCV() {
                             setVolunteering={setVolunteering}
                             projects={projects}
                             setProjects={setProjects}
+                            hobbies={hobbies}
+                            setHobbies={setHobbies}
                             languages={languages}
                             setLanguages={setLanguages}
+                            generatePDF={generatePDF}
                         />
                     </div>
                     <div className="col">
@@ -83,19 +88,24 @@ function CreateCV() {
                                     education={education}
                                     volunteering={volunteering}
                                     projects={projects}
+                                    hobbies={hobbies}
                                     languages={languages}
                                 />
                             </div>
                         </div>
-                        <button onClick={generatePDF}>ייצא כ-PDF</button>
                     </div>
                 </div>
             </div>
-            {/* {isOverflowing && (
+            {isOverflowing && !close &&(
                 <div className="overflow-warning">
-                    <p>Warning: The content is overflowing the resume bounds. Please adjust the content.</p>
+                    <button className="btn-close" onClick={() => setClose(true)}></button>
+                    <div className="text-center px-5">
+                        <p>Attention: The text you've entered exceeds the page boundaries.</p>
+                        <p>Your resume may extend across more than one page.</p>
+                    </div>
                 </div>
-            )} */}
+                
+            )}
         </>
         
     );

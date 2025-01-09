@@ -7,6 +7,9 @@ function SecondStep({ skills, setSkills}) {
     const [newSkill, setNewSkill] = useState("");
 
     function addSkill() {
+        if(newSkill === ""){
+            return;
+        }
         setSkills([...skills, newSkill]);
         setNewSkill("");
     }

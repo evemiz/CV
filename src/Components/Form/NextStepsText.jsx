@@ -35,10 +35,16 @@ export const projectsText = {
 };
 
 export const languagesText = {
-    header: "Languages",
-    description: "List the languages you know, along with your proficiency level.",
-    titlePlaceholder: "e.g., Languages",
-    subTitle: "Language",
-    subTitlePlaceholder: "e.g., English",
-    contentPlaceholder: "Specify your proficiency level, e.g., Fluent, Advanced, or Intermediate."
+    title: "Languages",
+    header: "List the languages you know, along with your proficiency level.",
+    placeholder: "e.g., English",
+    haveSelect: true
 };
+
+export const hobbiesText = {
+    title: "Hobbies",
+    header: "Showcase your personal interests and hobbies. This helps highlight your well-rounded personality and may indicate skills or qualities valuable to potential employers.",
+    placeholder: "e.g., Photography",
+    haveSelect: false
+};
+
