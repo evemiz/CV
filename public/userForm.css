@@ -32,3 +32,53 @@ body {
     white-space: nowrap;
     text-align: left;
 }
+
+.img-templates {
+    width: 300px;           
+    height: auto;                
+    border-radius: 8px;          
+    border: 2px solid #ccc;     
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    transition: transform 0.3s ease, box-shadow 0.3s ease; 
+    margin: 20px auto;
+    display: block; 
+}
+
+.img-templates:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.templates-grid-container {
+    height: 90vh;
+    overflow: auto;
+    padding-right: 10px;
+    background-color: #83838436;
+    padding-top: 20px;
+}
+
+.templates-grid-container::-webkit-scrollbar {
+    width: 8px; 
+}
+
+.templates-grid-container::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.177);
+    border-radius: 10px;
+}
+
+.templates-grid-container::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+.click-here-but {
+    color: rgb(83, 137, 137);
+    font-weight: bold;
+    font-size: 1.2rem;
+    transition: transform 0.3s ease;
+    background-color: transparent;
+    border: none;
+}
+
+.click-here-but:hover {
+    transform: scale(1.1);
+}

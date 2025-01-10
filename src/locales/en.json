@@ -85,5 +85,8 @@
     "tip_skills": "Show relevant skills",
     "tip_skills_desc": "Include a dedicated \"Skills\" section that lists technical and soft skills related to the job.",
     "tip_summary": "Add a professional summary",
-    "tip_summary_desc": "Start with a brief summary at the top that highlights your key strengths and career goals."
+    "tip_summary_desc": "Start with a brief summary at the top that highlights your key strengths and career goals.",
+    "choose_template": "Please choose a design",
+    "like_the_design" : "Like the design? ",
+    "like_the_design_btn" : "Click here to continue!"
 }

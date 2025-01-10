@@ -1,7 +1,7 @@
 import React from "react";
 import "../../../public/homePage.css"
 
-function GetStarted({ t }) {
+function GetStarted({ t, setPage }) {
     return(
         <div className="container">
             <div className="row flex-lg-row-reverse align-items-center g-5 py-5">
@@ -11,7 +11,13 @@ function GetStarted({ t }) {
                 <div className="col-lg-6">
                     <p className="lead"><span className="web-name-title">NextStepCV</span> {t('platform_description')}</p>
                     <div className="d-grid gap-2 d-md-flex justify-content-center mt-4">
-                        <button type="button" className="btn btn-outline-secondary btn-lg px-4">{t('get_started')}</button>
+                        <button 
+                        onClick={() => setPage(2)} 
+                        type="button" 
+                        className="btn btn-outline-secondary btn-lg px-4"
+                        >
+                        {t('get_started')}
+                        </button>
                     </div>
                 </div>
             </div>

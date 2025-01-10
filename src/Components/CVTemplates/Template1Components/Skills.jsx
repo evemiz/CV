@@ -1,10 +1,10 @@
 import React from "react";
 
-function Skills({ content, t }) {
+function Skills({ content, t, i18n }) {
     return(
         <div className="row gap-5 d-flex align-items-start justify-content-center mt-4">
             <div className="col-auto">
-                <div className={`row d-flex align-items-start p-0 ${t('skills_title') === 'כישורים' ? 'me-4' : 'ms-4'}`}>
+                <div className={`row d-flex align-items-start p-0 ${i18n.language === 'he' ? 'me-4' : 'ms-4'}`}>
                     <div className="sub-title-size p-0">{t('skills_title')}</div>
                 </div>
             </div>

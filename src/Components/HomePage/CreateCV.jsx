@@ -1,9 +1,8 @@
 import React, { useState, useEffect, useRef } from "react";
-import Template1 from "../CVTemplates/Template1Components/Template1";
 import html2pdf from "html2pdf.js";
 import CVForm from "../Form/CVForm";
 
-function CreateCV({ t }) {
+function CreateCV({ t, templateToShow, templates }) {
     const [isOverflowing, setIsOverflowing] = useState(false);
     const [close, setClose] = useState(false);
     const resumeRef = useRef(null);
@@ -18,6 +17,28 @@ function CreateCV({ t }) {
     const [hobbies, setHobbies] = useState([]);
     const [languages, setLanguages] = useState([]);
     const [stepNum, setStepNum] = useState(1);
+
+    const renderTemplate = () => {
+        const Template = templates[templateToShow];
+        if (!Template) return null;
+        return (
+            <Template 
+                resumeRef={resumeRef}
+                name={name}
+                links={links}
+                skills={skills}
+                about={about}
+                experience={experience}
+                education={education}
+                volunteering={volunteering}
+                projects={projects}
+                hobbies={hobbies}
+                languages={languages}
+                stepNum={stepNum}
+                t={t}
+            />
+        );
+    };
 
     useEffect(() => {
         const checkOverflow = () => {
@@ -81,21 +102,7 @@ function CreateCV({ t }) {
                     <div className="col">
                             <div className="template-container">
                             <div id="template-content">
-                                <Template1 
-                                    resumeRef={resumeRef}
-                                    name={name}
-                                    links={links}
-                                    skills={skills}
-                                    about={about}
-                                    experience={experience}
-                                    education={education}
-                                    volunteering={volunteering}
-                                    projects={projects}
-                                    hobbies={hobbies}
-                                    languages={languages}
-                                    stepNum={stepNum}
-                                    t={t}
-                                />
+                                {renderTemplate()}
                             </div>
                         </div>
                     </div>

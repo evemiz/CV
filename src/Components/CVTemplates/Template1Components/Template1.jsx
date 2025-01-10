@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { useTranslation } from 'react-i18next';
 import '../../../../public/templates.css'
 import Title from "./Title";
 import Links from "./Links"
@@ -22,7 +23,8 @@ function Template1({
     stepNum,
     t
 }) {
-
+    const { i18n } = useTranslation();
+    console.log(i18n);
     const [parent, setParent] = useState(null);
 
     useEffect(() => {
@@ -59,7 +61,7 @@ function Template1({
                         </div>
                         {skills.length > 0 && 
                         <>
-                            <Skills content = {skills} t={t}/>
+                            <Skills content = {skills} t={t} i18n={i18n}/>
                             <div className="row mx-3 mt-3"><hr /></div>    
                         </>
                         }
@@ -70,6 +72,7 @@ function Template1({
                                 subTitles = {[""]}
                                 years = {[""]}
                                 paragraphs = {[about.content]}
+                                i18n={i18n}
                             />
                             <div className="row mx-3 mt-3"><hr /></div>
                         </>
@@ -82,6 +85,7 @@ function Template1({
                                 subTitles={experience.arr.map((i) => i.title)} 
                                 years={experience.arr.map((i) => i.year)}
                                 paragraphs={experience.arr.map((i) => i.content)}
+                                i18n={i18n}
                             />
                             <div className="row mx-3 mt-3"><hr /></div>
                         </>
@@ -94,6 +98,7 @@ function Template1({
                                 subTitles={education.arr.map((i) => i.title)} 
                                 years={education.arr.map((i) => i.year)}
                                 paragraphs={education.arr.map((i) => i.content)}
+                                i18n={i18n}
                             />
                             <div className="row mx-3 mt-3"><hr /></div>
                         </>
@@ -106,6 +111,7 @@ function Template1({
                                 subTitles={volunteering.arr.map((i) => i.title)} 
                                 years={volunteering.arr.map((i) => i.year)}
                                 paragraphs={volunteering.arr.map((i) => i.content)}
+                                i18n={i18n}
                             />
                             <div className="row mx-3 mt-3"><hr /></div>
                         </>
@@ -118,6 +124,7 @@ function Template1({
                                 subTitles={projects.arr.map((i) => i.title)} 
                                 years={projects.arr.map((i) => i.year)}
                                 paragraphs={projects.arr.map((i) => i.content)}
+                                i18n={i18n}
                             />
                             <div className="row mx-3 mt-3"><hr /></div>
                         </>
@@ -126,7 +133,7 @@ function Template1({
                         {/*Hobbies*/}
                         {hobbies.length > 0 &&
                         <>
-                            <Hobbies content={hobbies.map(hobby => hobby.item)} t={t}/>
+                            <Hobbies content={hobbies.map(hobby => hobby.item)} t={t} i18n={i18n}/>
                             <div className="row mx-3 mt-3"><hr /></div>
                         </>
                         }
@@ -138,6 +145,7 @@ function Template1({
                                 title={t('languagesText_title')}
                                 items={languages.map(i => i.level ? `${i.item} - ${i.level}` : i.item)}
                                 t={t}
+                                i18n={i18n}
                             />
                             <div className="row mx-3 mt-3"><hr /></div>
                         </>
