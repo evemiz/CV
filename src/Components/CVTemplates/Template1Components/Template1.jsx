@@ -32,7 +32,7 @@ function Template1({
     }, [stepNum]);
 
     function removeLastHr() {
-        if (stepNum === 10) {
+        if (stepNum === 9) {
             const hrArr = document.getElementsByTagName('hr');
             if (hrArr.length > 0) {
                 const lastHr = hrArr[hrArr.length - 1];
