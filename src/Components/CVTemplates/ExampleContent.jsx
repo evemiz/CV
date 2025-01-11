@@ -1,6 +1,7 @@
 export const cvDataEng = {
     resumeRef: null,
     name: "John Doe",
+    title: "Software Engineer",
     links: {
         Linkedin: "https://www.linkedin.com/in/johndoe",
         Github: "https://github.com/johndoe",
@@ -90,6 +91,7 @@ export const cvDataEng = {
 export const cvDataHeb = {
     resumeRef: null,
     name: "יוחנן דואן",
+    title: "מהנדס תוכנה",
     links: {
         Linkedin: "https://www.linkedin.com/in/johndoe",
         Github: "https://github.com/johndoe",

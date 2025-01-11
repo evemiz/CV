@@ -5,15 +5,22 @@ import NavBar from "../NavBar";
 import GetStarted from "./GetStarted";
 import ChooseTemplate from "./ChooseTemplate";
 import Template1 from "../CVTemplates/Template1Components/Template1";
+import Template2 from "../CVTemplates/Template2Components/Template2";
+
+import { cvDataEng, cvDataHeb } from "../CVTemplates/ExampleContent";
 
 function Home() {
     const { t, i18n } = useTranslation();
     const [page, setPage] = useState(1);
     const [templateToShow, setTemplateToShow] = useState(null);
 
+    const isHebrew = i18n.language === 'he';
+        
+    const cvData = isHebrew ? cvDataHeb : cvDataEng;
+
     const templates = {
         1: Template1,
-        // 2: Template2,
+        2: Template2,
         // 3: Template3,
         // 4: Template4
     };
@@ -36,6 +43,22 @@ function Home() {
     return(
         <>
           <NavBar changeLanguage={changeLanguage}/>
+          {/* <Template2
+                resumeRef={null} 
+                name={cvData.name} 
+                title={cvData.title}
+                links={cvData.links}
+                skills={cvData.skills} 
+                about={cvData.about}
+                experience={cvData.experience} 
+                education={cvData.education} 
+                volunteering={cvData.volunteering} 
+                projects={cvData.projects} 
+                hobbies={cvData.hobbies} 
+                languages={cvData.languages} 
+                stepNum={cvData.stepNum} 
+                t={t}
+            /> */}
 
           {page === 1 && 
             <GetStarted t={t} setPage={setPage}/>

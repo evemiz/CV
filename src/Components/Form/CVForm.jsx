@@ -190,7 +190,7 @@ function CVForm({
                         )}
                     </button>
                 }
-                {stepNum < 9 && 
+                {stepNum < 10 && 
                     <button 
                         type="button" 
                         className="btn btn-outline-primary mx-1"

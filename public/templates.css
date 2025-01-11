@@ -21,25 +21,24 @@
     font-weight: bold;
 }
 
-
-.title-size {
+#template1 .title-size {
     font-size: 30px;
     color: #545454;
     white-space: nowrap;
     font-weight: 700;
-    }
+}
 
-.sub-title-size {
+#template1 .sub-title-size {
     font-size: 20px;
     color: #545454;
     font-weight: 570;
 }
 
-.second-sub-title-size {
+#template1 .second-sub-title-size {
     font-weight: 650;
 }
 
-.circle {
+#template1 .circle {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -47,19 +46,25 @@
     border-radius: 50%;
     width: 23px;
     height: 23px;
+    color: white;
 }
 
-.grey-bg-color {
+#template1 svg {
+    height: 14px;
+    width: 14px;
+}
+
+#template1 .grey-bg-color {
     background-color: #f4f4f4;
     border-bottom: 5px solid #545454;
 }
 
-.skills-bg {
+#template1 .skills-bg {
     background-color: #f4f4f4;
     border-radius: 10px;
 }
 
-.template-container {
+#template1 .template-container {
     width: fit-content;
     margin: 20px 10px;
     border: 1px solid #d5d3d3;
@@ -68,6 +73,71 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.user-form {
+#template1 .user-form {
     margin: 20px 10px;
+}
+
+/* Template 2 */
+
+html[dir="ltr"] #template2{
+    font-family: "Poppins", serif;
+    font-style: normal;
+    color: #4a454b;
+    font-size: 11px;
+    font-weight: 300;
+}
+
+html[dir="rtl"] body {
+    font-family: "Rubik", serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    color: #4a454b;
+    font-size: 11px;
+    font-weight: 300;
+}
+
+#template2 .head-line {
+    height: 70px;
+    background-color: #f0cfc3;
+}
+
+#template2 .title-name{
+    font-size: 2.8rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+}
+
+#template2 .title-description{
+    font-size: 1rem;
+    font-weight: 200;
+    letter-spacing: 4px;
+}
+
+#template2 .icons-box {
+    color: #4a454b;
+}
+
+#template2 svg {
+    height: 16px;
+    width: 16px;
+}
+
+#template2 .sub-title-size {
+    font-size: 20px;
+    color: #545454;
+    font-weight: 570;
+    letter-spacing: 2px;
+}
+
+#template2 .second-sub-title-size {
+    font-size: 13px;
+    font-weight: 600;
+}
+
+#template2 .year-style{
+    font-weight: 500;
+}
+
+#template2 .skills-list{
+    list-style-type: none;
 }

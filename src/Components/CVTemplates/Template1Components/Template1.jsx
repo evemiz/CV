@@ -32,7 +32,7 @@ function Template1({
     }, [stepNum]);
 
     function removeLastHr() {
-        if (stepNum === 9) {
+        if (stepNum === 10) {
             const hrArr = document.getElementsByTagName('hr');
             if (hrArr.length > 0) {
                 const lastHr = hrArr[hrArr.length - 1];
@@ -48,7 +48,7 @@ function Template1({
 
     return (
         <>
-            <div className="resume" ref={resumeRef}>
+            <div className="resume" ref={resumeRef} id="template1">
                 <div className="container-fluid">
                     <div className="col">
 
